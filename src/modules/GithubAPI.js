@@ -18,5 +18,21 @@ async function getCommits () {
     return data.json()
 }
 
-const exports = { getCommits }
+async function getRepoInfo () {
+    const data = await fetch(
+        `https://api.github.com/repos/${repoOwner}/${repoName}`,
+        {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${githubToken}`
+            },
+            next: {
+                revalidate: 10
+            }
+        }
+    )
+    return data.json()
+}
+
+const exports = { getCommits, getRepoInfo }
 export default exports
