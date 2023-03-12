@@ -1,11 +1,11 @@
 import Commit from '@/components/Commit'
 import GithubAPI from '@/modules/GithubAPI'
 
-export default async function Home () {
+export default async function Commits () {
     const data = await GithubAPI.getCommits()
 
     return (
-        <div className='p-4'>
+        <div className='container mx-auto py-8'>
             <h1 className='text-xl'>Commits</h1>
             <div className='w-9/12'>
                 <ol className=''>
