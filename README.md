@@ -13,7 +13,7 @@ You can change the repository that will be used to show the information with an 
 
 To start the server, simply run
 
-	npm init
+	npm install
 	npm run dev
 
 It will start listening for requests on port 3000
